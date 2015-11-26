@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.test2.android.test2application"
+        applicationId "com.test2.android.fontn"
         minSdkVersion 17
         targetSdkVersion 22
         versionCode 1

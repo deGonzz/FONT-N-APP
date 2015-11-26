@@ -10,5 +10,5 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:id="@+id/grid_char_menu_textview"/>
