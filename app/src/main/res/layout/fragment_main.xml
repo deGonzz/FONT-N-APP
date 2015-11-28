@@ -12,11 +12,20 @@
     <GridView
         android:id="@+id/gridcharview"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="400dp"
         android:columnWidth="45dp"
         android:gravity="center"
         android:numColumns="7"
         android:verticalSpacing="-15dp"/>
+
+
+    <Button
+        android:id="@+id/button_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Display"
+        android:onClick="onButtonClick" />
 
 
 </RelativeLayout>
