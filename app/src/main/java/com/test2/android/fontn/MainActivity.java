@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 //    @Override
     public void onButtonClick(View v) {
         if (v.getId() == R.id.button_display) {
-            Intent i = new Intent(MainActivity.this, Display.class);
+            Intent i = new Intent(MainActivity.this, MainDisplay.class);
             startActivity(i);
         }
     }
