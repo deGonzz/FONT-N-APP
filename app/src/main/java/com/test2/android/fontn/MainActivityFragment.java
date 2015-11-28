@@ -1,12 +1,17 @@
 package com.test2.android.fontn;
 
-import android.support.v4.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +20,8 @@ import java.util.List;
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
+
+    Context c;
 
     public MainActivityFragment() {
     }
@@ -62,6 +69,30 @@ public class MainActivityFragment extends Fragment {
         GridView mygridview = (GridView) rootView.findViewById(R.id.gridcharview);
         mygridview.setAdapter(mFontGridAdapter);
 
+        mygridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+                Toast.makeText(getActivity(),
+                ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
+
+//                Intent i = new Intent(MainActivityFragment.this, MainDisplay.class);
+//                i.putExtra("id", position);
+//                startActivity(i);
+
+            }
+//                // Send intent to SingleViewActivity
+//                Intent i = new Intent(MainActivity().this, MainDisplay.class);
+//
+//                // Pass image index
+//                i.putExtra("id", position);
+//                startActivity(i);
+        });
+
         return rootView;
+
+
+
+
     }
+
+
 }
