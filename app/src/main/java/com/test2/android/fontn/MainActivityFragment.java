@@ -23,6 +23,18 @@ public class MainActivityFragment extends Fragment {
 
 
     public int UNIQUE_INT_PER_CALL = 0;
+    public List<String> dummychar;
+    public static String[] alphabet = {
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+            "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+            "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g",
+            "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
+            "s", "t", "u", "v", "w", "x", "y", "z", "!", "#", "$",
+            "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
+            "[", "]", "^", "_", "`", "0", "1", "2", "3", "4", "5",
+            "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@",
+            "{", "|", "}", "~"
+    };
 
     public MainActivityFragment() {
     }
@@ -35,20 +47,9 @@ public class MainActivityFragment extends Fragment {
 
         // Create some dummy data for the GridView. Here's a sample char font:
 
-        String[] alphabet = {
-                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
-                "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
-                "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g",
-                "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
-                "s", "t", "u", "v", "w", "x", "y", "z", "!", "#", "$",
-                "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
-                "[", "]", "^", "_", "`", "0", "1", "2", "3", "4", "5",
-                "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@",
-                "{", "|", "}", "~"
-        };
+        int arrayCount = alphabet.length;
 
-
-        List<String> dummychar = new ArrayList<String>(Arrays.asList(alphabet));
+        dummychar = new ArrayList<String>(Arrays.asList(alphabet));
 
         // Now that we have some dummy char font, create an ArrayAdapter.
         // The ArrayAdapter will take data from a source (like our dummy font) and
@@ -74,31 +75,14 @@ public class MainActivityFragment extends Fragment {
 
         mygridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
-//                Toast.makeText(getActivity(),
+//              Toast.makeText(getActivity(),
 //                        ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
-
-
-
                 Intent i = new Intent(getActivity(), MainDisplay.class);
-//                i.putExtra("stringid", position);
-                i.putExtra("textSelected",((TextView) v).getText());
+                i.putExtra("textSelected", ((TextView) v).getText());
                 Log.v("i", i + " is your i");
                 startActivity(i);
-
-
-
-
             }
-
-
         });
-
         return rootView;
-
-
-
-
     }
-
-
 }

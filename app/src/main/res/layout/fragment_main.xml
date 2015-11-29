@@ -45,11 +45,11 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.8">
+        android:layout_weight="0.55">
         <GridView
             android:id="@+id/gridcharview"
             android:layout_width="match_parent"
-            android:layout_height="466dp"
+            android:layout_height="405dp"
             android:columnWidth="45dp"
             android:gravity="center"
             android:numColumns="7"
@@ -60,34 +60,38 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_weight="0.45"
         android:layout_alignParentBottom="true">
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:weightSum="1"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <Button
                 android:id="@+id/button_display"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Display"
+                android:text="Save Font"
                 android:background="@drawable/footer_button"
                 android:textColor="#ffffff"
                 android:onClick="onButtonClick"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginBottom="6dp"/>
+                <!--android:layout_marginRight="5dp"-->
 
             <Button
                 android:id="@+id/button_display2"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="MainDisplay"
+                android:text="Restart Font"
                 android:background="@drawable/footer_button"
                 android:textColor="#ffffff"
                 android:onClick="onButtonClick"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"/>
+                <!--android:layout_marginLeft="5dp"-->
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
