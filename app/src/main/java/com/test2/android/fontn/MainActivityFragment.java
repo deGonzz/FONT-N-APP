@@ -1,8 +1,9 @@
 package com.test2.android.fontn;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +21,8 @@ import java.util.List;
  */
 public class MainActivityFragment extends Fragment {
 
-    Context c;
+
+    public int UNIQUE_INT_PER_CALL = 0;
 
     public MainActivityFragment() {
     }
@@ -69,22 +70,27 @@ public class MainActivityFragment extends Fragment {
         GridView mygridview = (GridView) rootView.findViewById(R.id.gridcharview);
         mygridview.setAdapter(mFontGridAdapter);
 
+
+
         mygridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
-                Toast.makeText(getActivity(),
-                ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(),
+//                        ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
 
-//                Intent i = new Intent(MainActivityFragment.this, MainDisplay.class);
-//                i.putExtra("id", position);
-//                startActivity(i);
+
+
+                Intent i = new Intent(getActivity(), MainDisplay.class);
+//                i.putExtra("stringid", position);
+                i.putExtra("textSelected",((TextView) v).getText());
+                Log.v("i", i + " is your i");
+                startActivity(i);
+
+
+
 
             }
-//                // Send intent to SingleViewActivity
-//                Intent i = new Intent(MainActivity().this, MainDisplay.class);
-//
-//                // Pass image index
-//                i.putExtra("id", position);
-//                startActivity(i);
+
+
         });
 
         return rootView;
