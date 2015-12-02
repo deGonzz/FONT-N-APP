@@ -50,12 +50,14 @@
             android:id="@+id/gridcharview"
             android:layout_width="match_parent"
             android:layout_height="405dp"
-            android:columnWidth="45dp"
+            android:verticalSpacing="10dp"
             android:gravity="center"
-            android:numColumns="7"
-            android:verticalSpacing="-15dp"
+            android:numColumns="6"
+
             android:focusable="false"
             android:focusableInTouchMode="false"/>
+
+            <!--android:columnWidth="45dp"-->
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -68,7 +70,7 @@
             android:weightSum="1"
             android:orientation="vertical">
             <Button
-                android:id="@+id/button_display"
+                android:id="@+id/save_font"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
@@ -80,7 +82,7 @@
                 <!--android:layout_marginRight="5dp"-->
 
             <Button
-                android:id="@+id/button_display2"
+                android:id="@+id/restart_font"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"

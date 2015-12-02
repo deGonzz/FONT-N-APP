@@ -10,6 +10,12 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    public int REQUEST_CODE_CHECK = 1;
+    public int resultCode;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
-
 
     }
 
@@ -31,17 +33,26 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-//    @Override
+
+
+
     public void onButtonClick(View v) {
-        if (v.getId() == R.id.button_display) {
-            Intent i = new Intent(MainActivity.this, MainDisplay.class);
-            startActivity(i);
-        }
-        if (v.getId() == R.id.button_display2) {
+        if (v.getId() == R.id.save_font) {
             Intent i = new Intent(MainActivity.this, Display.class);
             startActivity(i);
         }
 
+//        if (v.getId() == R.id.restart_font) {
+//            Intent i = new Intent(MainActivity.this, MainDisplay.class);
+//            startActivityForResult(i, REQUEST_CODE_CHECK);
+//            i.putExtra("firstFontItem", MainActivityFragment.alphabet[0]);
+//            startActivity(i);
+//        }
+
+//        if(MainDisplay.requestCode == REQUEST_CODE_CHECK && resultCode == RESULT_OK){
+//            final TextView displayString = (TextView) findViewById(R.id.charView);
+//            displayString.setText(MainActivityFragment.alphabet[0]);
+//        }
 
     }
 
