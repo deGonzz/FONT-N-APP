@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonClick(View v) {
         if (v.getId() == R.id.save_font) {
-            Intent i = new Intent(MainActivity.this, Display.class);
+            Intent i = new Intent(MainActivity.this, DrawingActivity.class);
             startActivity(i);
         }
 

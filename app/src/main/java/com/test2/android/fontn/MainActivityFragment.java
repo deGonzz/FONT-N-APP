@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,16 +55,12 @@ public class MainActivityFragment extends Fragment {
 //            "http://i00.i.aliimg.com/photo/v0/60178145604_1/2015Teda_wholesale_Letters_Capital_Alphabet.jpg_200x200.jpg"
 //    };
 
-    public int[] images = {
+    public static int[] images = {
+            R.drawable.apple_logo, R.drawable.blue_apple_logo, R.drawable.building_wall, R.drawable.grey_brick_wall, R.drawable.plaque_wall, R.drawable.squared_box, R.drawable.squared_box,
+            R.drawable.concrete_wall, R.drawable.apple_logo, R.drawable.blue_apple_logo, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
             R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
             R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
-            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
-            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
-            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
-            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
-            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
-            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
-            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box,
+            R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box, R.drawable.squared_box
     };
 
     public MainActivityFragment() {
@@ -127,7 +122,8 @@ public class MainActivityFragment extends Fragment {
 //              Toast.makeText(getActivity(),
 //                        ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getActivity(), MainDisplay.class);
-                i.putExtra("textSelected", ((TextView) v).getText());
+//                i.putExtra("textSelected", ((TextView) v).getText());
+                i.putExtra("textSelected", (int)(parent.getAdapter().getItem(position)));
                 Log.v("i", i + " is your i");
                 startActivity(i);
             }
